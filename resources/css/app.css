@@ -8,4 +8,203 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* ===== Cagayan Museum palette ===== */
+    --cm-teal: #0f766e;
+    --cm-teal-dark: #0d5e54;
+    --cm-gold: #ca8a4a;
+    --cm-terracotta: #c24c29;
+    --cm-cream: #fefcfb;
+    --cm-sand: #e9dcc9;
+
+    /* ===== Custom easing (from emil-design-eng) ===== */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-spring: cubic-bezier(0.3, 0.1, 0.2, 1);
+}
+
+/* ===== Base typography ===== */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply text-neutral-800 antialiased;
+    }
+}
+
+/* ===== Entry animations (interruptible, CSS transitions) ===== */
+@layer components {
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
+    }
+
+    .fade-in-up[data-animate] {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fade-in {
+        opacity: 0;
+        transition: opacity 400ms var(--ease-out);
+    }
+
+    .fade-in[data-animate] {
+        opacity: 1;
+    }
+
+    /* Stagger children automatically */
+    .stagger {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out);
+    }
+
+    .stagger[data-animate] {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .stagger .stagger-item {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out);
+    }
+
+    .stagger[data-animate] .stagger-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Per-item stagger delays (30-50ms increments, per emil-design-eng) */
+    .stagger[data-animate] .stagger-item:nth-child(1) { transition-delay: 50ms;  }
+    .stagger[data-animate] .stagger-item:nth-child(2) { transition-delay: 80ms;  }
+    .stagger[data-animate] .stagger-item:nth-child(3) { transition-delay: 110ms; }
+    .stagger[data-animate] .stagger-item:nth-child(4) { transition-delay: 140ms; }
+    .stagger[data-animate] .stagger-item:nth-child(5) { transition-delay: 170ms; }
+    .stagger[data-animate] .stagger-item:nth-child(6) { transition-delay: 200ms; }
+
+    /* Glass / translucency (from apple-design) */
+    .glass {
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    /* Button press feedback (from emil-design-eng) */
+    /* .press-scale {
+        transition: transform 120ms var(--ease-spring);
+    } */
+
+    /* .press-scale:active {
+        transform: scale(0.97);
+    } */
+
+    /* Focus-visible: visible outline for keyboard users */
+    .focus-visible-focus {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    }
+
+    .focus-visible-focus:focus-visible:ring-cm-teal {
+        @apply focus-visible:ring-2;
+    }
+
+    /* Hover-only effects gated for touch (from emil-design-eng) */
+    @media (hover: hover) and (pointer: fine) {
+        .hover-lift {
+            transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-2px);
+        }
+
+        .hover-scale {
+            transition: transform 200ms var(--ease-out);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    /* Reduced motion (from both guides) */
+    @media (prefers-reduced-motion: reduce) {
+        .fade-in-up,
+        .fade-in,
+        .stagger,
+        .stagger .stagger-item,
+
+        .hover-lift,
+        .hover-scale {
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+        }
+
+        .stagger .stagger-item,
+        .fade-in-up,
+        .fade-in {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* Landing navigation link (from emil-design-eng: focus-visible, press feedback) */
+.landing-nav-link {
+    @apply relative text-neutral-600 text-sm font-medium transition-colors duration-200;
+}
+
+.landing-nav-link.landing-nav-link-active,
+.landing-nav-link:hover {
+    
+}
+
+.landing-nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: theme('cm-teal');
+    border-radius: 1px;
+}
+
+.landing-btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-white transition-all duration-200;
+}
+
+.landing-btn-primary:hover {
+    
+}
+
+/* ===== SVG icon helpers ===== */
+.icon {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+}
+
+/* Gold color utilities (not in Tailwind palette) */
+.text-gold {
+    color: theme('cm-gold');
+}
+
+.bg-gold {
+    background-color: theme('cm-gold');
+}
+
+.bg-gold-hover:hover {
+    background-color: theme('cm-gold');
+}
+
+/* Override for gold button hover (slightly lighter gold) */
+.hover\:bg-gold-hover:hover {
+    background-color: #d4b04a;
 }
