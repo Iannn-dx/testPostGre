@@ -1,40 +1,30 @@
 @extends('layouts.auth-split')
 
-@section('title', 'Create Account — Cagayan Museum')
+@section('title', 'Set New Password — Cagayan Museum')
 
 @section('content')
-    <x-auth-split-header title="Create an Account"
-        description="Register to manage visitor feedback and museum operations." />
+    <x-auth-split-header title="Set New Password" description="Choose a strong password for your staff account." />
 
-    <form method="POST" action="{{ route('register') }}" class="auth-form auth-form--register">
+    <form method="POST" action="{{ route('password.store') }}" class="auth-form">
         @csrf
 
-        <div class="auth-field">
-            <label for="name" class="auth-label">Full Name</label>
-            <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus
-                autocomplete="name" class="auth-input @error('name') auth-input--error @enderror"
-                placeholder="Juan Dela Cruz">
-            @error('name')
-                <p class="auth-error">{{ $message }}</p>
-            @enderror
-        </div>
+        <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
         <div class="auth-field">
-            <label for="email" class="auth-label">Email Address</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required
-                autocomplete="username" class="auth-input @error('email') auth-input--error @enderror"
-                placeholder="you@museum.gov.ph">
+            <label for="email" class="auth-label">Email</label>
+            <input id="email" type="email" name="email" value="{{ old('email', $request->email) }}" required
+                autofocus autocomplete="username" class="auth-input @error('email') auth-input--error @enderror">
             @error('email')
                 <p class="auth-error">{{ $message }}</p>
             @enderror
         </div>
 
         <div class="auth-field">
-            <label for="password" class="auth-label">Password</label>
+            <label for="password" class="auth-label">New Password</label>
             <div class="auth-password">
                 <input id="password" type="password" name="password" required autocomplete="new-password"
                     class="auth-input auth-input--password @error('password') auth-input--error @enderror"
-                    placeholder="Create a strong password">
+                    placeholder="Enter a new password">
                 <button type="button" class="auth-password__toggle" data-password-toggle
                     aria-label="Show password" aria-pressed="false" aria-controls="password">
                     <svg class="auth-password__icon auth-password__icon--show" viewBox="0 0 24 24" fill="none"
@@ -60,7 +50,7 @@
             <div class="auth-password">
                 <input id="password_confirmation" type="password" name="password_confirmation" required
                     autocomplete="new-password" class="auth-input auth-input--password"
-                    placeholder="Re-enter your password">
+                    placeholder="Confirm your new password">
                 <button type="button" class="auth-password__toggle" data-password-toggle
                     aria-label="Show password" aria-pressed="false" aria-controls="password_confirmation">
                     <svg class="auth-password__icon auth-password__icon--show" viewBox="0 0 24 24" fill="none"
@@ -79,12 +69,7 @@
         </div>
 
         <button type="submit" class="auth-submit press-scale">
-            Register
+            Reset Password
         </button>
-
-        <p class="auth-footer-link">
-            Already have an account?
-            <a href="{{ route('login') }}">Sign in</a>
-        </p>
     </form>
 @endsection

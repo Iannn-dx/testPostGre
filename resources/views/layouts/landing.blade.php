@@ -46,8 +46,12 @@
                 </a>
 
                 @auth
-                    <a href="/dashboard" class="landing-btn-primary shrink-0">
+                    <a href="{{ route('dashboard') }}" class="landing-btn-primary shrink-0">
                         Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="landing-btn-primary shrink-0">
+                        Staff Login
                     </a>
                 @endauth
             </div>

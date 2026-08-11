@@ -6,27 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Visitor Feedback System') }}</title>
+    <title>@yield('title', 'Staff Login — Cagayan Museum')</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.bunny.net/css?family=fraunces:400,500,600|source-sans-3:400,500,600&display=swap"
+        rel="stylesheet" />
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/auth-login.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="relative flex min-h-screen w-full flex-col md:flex-row">
-        <div class="flex w-full flex-col items-center justify-center bg-white p-8 md:w-1/2">
-          <div class="w-full max-w-md">
-            {{ $slot }}
-          </div>
+<body class="auth-page font-sans antialiased">
+    <div class="auth-split">
+        <div class="auth-split__form">
+            <div class="auth-split__form-inner">
+                @yield('content')
+            </div>
         </div>
-        
-        <div class="relative-hiddden min-h-screen w-1/2 border-l border-neutral-900 bg-neutral-950 md:block">
-          <div class="absolute inset-0 bg-gradient-to-br from neutral-900/40 via neutral-950 to-black">
 
-          </div>
-        </div>
+        <aside class="auth-split__visual" aria-hidden="true">
+            <div class="auth-split__visual-bg"></div>
+            <div class="auth-split__visual-content">
+                <div class="auth-split__visual-logo">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="18" width="40" height="24" rx="1" stroke="currentColor"
+                            stroke-width="1.5" />
+                        <path d="M4 24h40" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M14 18V10h6v8M28 18V10h6v8" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <path d="M10 42v-4M38 42v-4" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <circle cx="24" cy="31" r="4" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <p class="auth-split__visual-eyebrow">National Museum of the Philippines</p>
+                <h2 class="auth-split__visual-title">Cagayan Museum &amp; Historical Research Center</h2>
+                <p class="auth-split__visual-location">Tuguegarao City, Cagayan</p>
+                <p class="auth-split__visual-tagline">Preserving heritage. Inspiring discovery.</p>
+            </div>
+        </aside>
     </div>
 </body>
 
