@@ -10,12 +10,12 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 
     /* ===== Cagayan Museum palette ===== */
-    --cm-teal: #0f766e;
-    --cm-teal-dark: #0d5e54;
-    --cm-gold: #ca8a4a;
-    --cm-terracotta: #c24c29;
-    --cm-cream: #fefcfb;
-    --cm-sand: #e9dcc9;
+    --color-cm-teal: #0f766e;
+    --color-cm-teal-dark: #0d5e54;
+    --color-cm-gold: #ca8a4a;
+    --color-cm-terracotta: #c24c29;
+    --color-cm-cream: #fefcfb;
+    --color-cm-sand: #e9dcc9;
 
     /* ===== Custom easing (from emil-design-eng) ===== */
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -30,7 +30,7 @@
     }
 
     body {
-        @apply text-neutral-800 antialiased;
+        @apply bg-cm-cream text-neutral-800 antialiased;
     }
 }
 
@@ -94,22 +94,9 @@
         border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
-    /* Button press feedback (from emil-design-eng) */
-    /* .press-scale {
-        transition: transform 120ms var(--ease-spring);
-    } */
-
-    /* .press-scale:active {
-        transform: scale(0.97);
-    } */
-
     /* Focus-visible: visible outline for keyboard users */
     .focus-visible-focus {
         @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    }
-
-    .focus-visible-focus:focus-visible:ring-cm-teal {
-        @apply focus-visible:ring-2;
     }
 
     /* Hover-only effects gated for touch (from emil-design-eng) */
@@ -137,7 +124,7 @@
         .fade-in,
         .stagger,
         .stagger .stagger-item,
-
+        .press-scale,
         .hover-lift,
         .hover-scale {
             animation: none !important;
@@ -155,6 +142,15 @@
     }
 }
 
+/* Button press feedback (from emil-design-eng) */
+@utility press-scale {
+    transition: transform 120ms var(--ease-spring);
+}
+
+.press-scale:active {
+    transform: scale(0.97);
+}
+
 /* Landing navigation link (from emil-design-eng: focus-visible, press feedback) */
 .landing-nav-link {
     @apply relative text-neutral-600 text-sm font-medium transition-colors duration-200;
@@ -162,7 +158,7 @@
 
 .landing-nav-link.landing-nav-link-active,
 .landing-nav-link:hover {
-    
+    @apply text-cm-teal;
 }
 
 .landing-nav-link-active::after {
@@ -172,16 +168,16 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: theme('cm-teal');
+    background-color: var(--color-cm-teal);
     border-radius: 1px;
 }
 
 .landing-btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-white transition-all duration-200;
+    @apply inline-flex items-center justify-center rounded-xl bg-cm-teal px-4 py-2 text-sm font-medium text-white transition-all duration-200 press-scale;
 }
 
 .landing-btn-primary:hover {
-    
+    @apply bg-cm-teal-dark;
 }
 
 /* ===== SVG icon helpers ===== */
@@ -193,15 +189,15 @@
 
 /* Gold color utilities (not in Tailwind palette) */
 .text-gold {
-    color: theme('cm-gold');
+    color: var(--color-cm-gold);
 }
 
 .bg-gold {
-    background-color: theme('cm-gold');
+    background-color: var(--color-cm-gold);
 }
 
 .bg-gold-hover:hover {
-    background-color: theme('cm-gold');
+    background-color: var(--color-cm-gold);
 }
 
 /* Override for gold button hover (slightly lighter gold) */
