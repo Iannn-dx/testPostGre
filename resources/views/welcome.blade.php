@@ -7,9 +7,11 @@
     <section class="relative overflow-hidden" data-animate="up">
         {{-- Gradient background with subtle pattern --}}
         <div class="absolute inset-0 bg-gradient-to-br from-cm-teal via-cm-teal-dark to-cm-terracotta"></div>
-        <div class="absolute inset-0 opacity-10" style="
-            background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v-2h2zm0-4v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v-2h2v2h2v-2h2v2h2V18h-8v2zm4 10v2h-2v-2h-2v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v-2h2v-2h2v2h2v-2h2v2zm-4 4v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v2h2v-2h2v-2h2v2h2v-2h2v2h2v-2h2v-2v-2zm8-12v2h-2v-2h-2v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-2zm-8-18v2h-2V16h-2v2H28v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2H28v2h2v-2H34v2zm-8 0v2h-2V16H14v2h2v-2h2V12h2v2zM10 6v2H8V6h2zm0 4v2H8v-2h2zm2 0h2v2H8v-2zm4 0h2v2h-2zm4 0h2v2H8v-2zm8 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm0-4V6h-2v2zm2 0h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4v-2zm-40 0v-2zm4 0h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4H8v2zm0 0H6v2zm0-4h2v2zm0 4zm2 0h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4v-2zm0-40v-2zm2 0h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm2-30v-2zm0 0h-2zm2 0h2zm0 0z' fill='%23ffffff' fill-opacity='0.07'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");
+<div class="absolute inset-0 opacity-10" style="
+            background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v-2h2zm0-4v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v-2h2v2h2v-2h2v2h2V18h-8v2zm4 10v2h-2v-2h-2v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v-2h2v2h2v-2h2v2zm-4 4v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v2h2v-2h2v-2h2v2h2v-2h2v2h2v-2h2v-2v-2zm8-12v2h-2v-2h-2v2h-2v-2h-2v2H28v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-2zm-8-18v2h-2V16h-2v2H28v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2H28v2h2v-2H34v2zm-8 0v2h-2V16H14v2h2v-2h2V12h2v2zM10 6v2H8V6h2zm0 4v2H8v-2h2zm2 0h2v2H8v-2zm4 0h2v2h-2zm4 0h2v2H8v-2zm8 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm0-4V6h-2v2zm2 0h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zm0 4v-2zm-40 0v-2zm4 0h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4h2v2zm0-4H8v2zm0 0H6v2zm0-4h2v2zm0 4zm2 0h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4v-2zm0-40v-2zm2 0h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm0 4h2v2zm2-30v-2zm0 0h-2zm2 0h2zm0 0z' fill='%23ffffff' fill-opacity='0.07'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");
         " style="background-size: 300px;"></div>
+        <div class="hero-orb hero-orb--teal" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb--gold" aria-hidden="true"></div>
 
         <div class="relative mx-auto max-w-6xl px-6 py-28 text-center text-white sm:py-36">
             <div class="stagger" data-animate="up">
@@ -37,8 +39,8 @@
 
             <div class="stagger mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row" data-animate="up">
                 <div class="stagger-item">
-                    <a href="#feedback"
-                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-cm-gold px-8 py-3.5 font-medium text-cm-teal-dark shadow-lg shadow-cm-terracotta/30 transition-all duration-200 press-scale hover:bg-gold-hover hover:shadow-xl">
+<a href="#feedback"
+                            class="btn-sheen inline-flex items-center justify-center gap-2 rounded-xl bg-cm-gold px-8 py-3.5 font-medium text-cm-teal-dark shadow-lg shadow-cm-terracotta/30 transition-all duration-200 press-scale hover:bg-gold-hover hover:shadow-xl">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M11.25 3v5.25a2.25 2.25 0 002.25 2.25h5.25M4.5 12h15.75M4.5 12l3-3m-3 3l3 3" />
@@ -61,27 +63,35 @@
         </div>
     </section>
 
+    {{-- ===== Collections marquee ===== --}}
+    <div class="marquee border-y border-white/25 bg-cm-teal-dark/40 py-4 text-sm font-medium uppercase tracking-widest text-white/80" aria-hidden="true">
+        <div class="marquee__track">
+            <span class="flex shrink-0 items-center gap-3.5"><span>Homo luzonensis</span><span class="text-gold">✦</span><span>Pleistocene Fossils</span><span class="text-gold">✦</span><span>Archaeological Finds</span><span class="text-gold">✦</span><span>Cultural Heritage</span><span class="text-gold">✦</span><span>Callao Cave</span><span class="text-gold">✦</span><span>Ethnographic Collections</span><span class="text-gold">✦</span><span>Natural History</span><span class="text-gold">✦</span></span>
+            <span class="flex shrink-0 items-center gap-3.5"><span>Homo luzonensis</span><span class="text-gold">✦</span><span>Pleistocene Fossils</span><span class="text-gold">✦</span><span>Archaeological Finds</span><span class="text-gold">✦</span><span>Cultural Heritage</span><span class="text-gold">✦</span><span>Callao Cave</span><span class="text-gold">✦</span><span>Ethnographic Collections</span><span class="text-gold">✦</span><span>Natural History</span><span class="text-gold">✦</span></span>
+        </div>
+    </div>
+
     {{-- ===== Quick Impact Stats ===== --}}
     <section class="bg-cm-cream py-12 border-t border-cm-sand/30">
         <div class="mx-auto max-w-6xl px-6">
             <div class="stagger" data-animate="up">
                 <div class="stagger-item text-center">
-                    <p class="text-3xl font-bold text-cm-teal">12,847</p>
+                    <p class="stat-count text-3xl font-bold text-cm-teal" data-count="12847" data-format="thousands">12,847</p>
                     <p class="text-sm text-neutral-500">Visitor Feedbacks Collected</p>
                 </div>
 
                 <div class="stagger-item text-center">
-                    <p class="text-3xl font-bold text-cm-teal">4.92</p>
+                    <p class="stat-count text-3xl font-bold text-cm-teal" data-count="4.92" data-format="decimal" data-decimals="2">4.92</p>
                     <p class="text-sm text-neutral-500">Average Museum Rating</p>
                 </div>
 
                 <div class="stagger-item text-center">
-                    <p class="text-3xl font-bold text-cm-teal">15+</p>
+                    <p class="stat-count text-3xl font-bold text-cm-teal" data-count="15" data-format="suffix" data-suffix="+">15+</p>
                     <p class="text-sm text-neutral-500">Museum Collections</p>
                 </div>
 
                 <div class="stagger-item text-center">
-                    <p class="text-3xl font-bold text-cm-teal">2 min</p>
+                    <p class="stat-count text-3xl font-bold text-cm-teal" data-count="2" data-format="suffix" data-suffix=" min">2 min</p>
                     <p class="text-sm text-neutral-500">Average Feedback Time</p>
                 </div>
             </div>
@@ -476,7 +486,7 @@
                 </div>
                 <div class="stagger-item mt-8">
                     <a href="#feedback"
-                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-cm-gold px-8 py-3.5 font-medium text-cm-teal-dark shadow-lg shadow-cm-terracotta/30 transition-all duration-200 press-scale hover:bg-gold-hover hover:shadow-xl">
+                        class="btn-sheen inline-flex items-center justify-center gap-2 rounded-xl bg-cm-gold px-8 py-3.5 font-medium text-cm-teal-dark shadow-lg shadow-cm-terracotta/30 transition-all duration-200 press-scale hover:bg-gold-hover hover:shadow-xl">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M11.25 3v5.25a2.25 2.25 0 002.25 2.25h5.25M4.5 12h15.75M4.5 12l3-3m-3 3l3 3" />
@@ -504,6 +514,59 @@
         document.querySelectorAll('[data-animate]').forEach(el => {
             observer.observe(el);
         });
+
+        // Count-up stats: animate from 0 once they enter the viewport.
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const counters = document.querySelectorAll('[data-count]');
+
+        function formatNumber(value, opts) {
+            if (opts.format === 'decimal') {
+                const decimals = opts.decimals || 2;
+                const padded = value.toFixed(decimals);
+                return opts.suffix ? padded + opts.suffix : padded;
+            }
+            if (opts.format === 'suffix') {
+                return Math.round(value) + (opts.suffix || '');
+            }
+            return Math.round(value).toLocaleString('en-US') + (opts.suffix || '');
+        }
+
+        function runCountUp(el) {
+            const opts = {
+                format: el.dataset.format,
+                suffix: el.dataset.suffix || '',
+                decimals: parseInt(el.dataset.decimals, 10) || 0,
+            };
+            const target = parseFloat(el.dataset.count);
+
+            if (reduceMotion) {
+                el.textContent = formatNumber(target, opts);
+                return;
+            }
+
+            const duration = 1200;
+            const start = performance.now();
+
+            function tick(now) {
+                const t = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3); // ease-out
+                el.textContent = formatNumber(target * eased, opts);
+                if (t < 1) requestAnimationFrame(tick);
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCountUp(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        counters.forEach(el => counterObserver.observe(el));
     });
 </script>
 @endpush
