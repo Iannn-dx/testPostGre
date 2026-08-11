@@ -1,11 +1,9 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', [FeedbackController::class, 'create'])->name('home');
+Route::post('/', [FeedbackController::class, 'store'])->name('feedback.store');
 
-Route::get('/', function (){
-    return view('welcome');
-});
+Route::redirect('/feedback', '/');

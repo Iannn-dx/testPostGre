@@ -6,58 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', config('app.name', 'Visitor Feedback System'))</title>
+    <title>@yield('title', 'Visitor Feedback — Cagayan Museum')</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.bunny.net/css?family=fraunces:400,500,600|source-sans-3:400,500,600&display=swap"
+        rel="stylesheet" />
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/feedback-form.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="flex min-h-screen flex-col bg-white/70 backdrop-blur">
-        <header class="border-b border-neutral-800">
-            <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-                <a href="/" class="text-lg font-bold tracking-tight text-cm-teal-dark">
-                    Cagayan Museum
+<body class="feedback-page font-sans antialiased">
+    <div class="feedback-shell flex min-h-screen flex-col">
+        <div class="feedback-ambient" aria-hidden="true">
+            <div class="feedback-ambient__orb feedback-ambient__orb--teal"></div>
+            <div class="feedback-ambient__orb feedback-ambient__orb--sand"></div>
+        </div>
+
+        <header class="feedback-header">
+            <div class="feedback-header__inner mx-auto flex items-center justify-between gap-4">
+                <a href="{{ route('home') }}" class="feedback-header__brand">
+                    <div class="feedback-logo" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="18" width="40" height="24" rx="1" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <path d="M4 24h40" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M14 18V10h6v8M28 18V10h6v8" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <path d="M10 42v-4M38 42v-4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <circle cx="24" cy="31" r="4" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="feedback-header__eyebrow">National Museum of the Philippines</p>
+                        <p class="feedback-header__title">Cagayan Museum &amp; Historical Research Center</p>
+                        <p class="feedback-header__location">Tuguegarao City, Cagayan</p>
+                    </div>
                 </a>
 
-                <nav class="flex items-center gap-6">
-                    <a href="/"
-                            class="landing-nav-link {{ request()->is('/') ? 'landing-nav-link-active' : '' }}">
-                            Home
-                        </a>
-
-                        <a href="/#about"
-                            class="landing-nav-link">
-                            About
-                        </a>
-
-                    @auth
-                        <a href="/dashboard" class="landing-btn-primary">
-                            Dashboard
-                        </a>
-                    @else
-                        <a href="/login" class="landing-nav-link hidden sm:inline">
-                            Log in
-                        </a>
-                        <a href="/register" class="landing-btn-primary">
-                            Create Account
-                        </a>
-                    @endauth
-                </nav>
+                @auth
+                    <a href="/dashboard" class="landing-btn-primary shrink-0">
+                        Dashboard
+                    </a>
+                @endauth
             </div>
         </header>
 
-        <main class="flex-1">
+        <main class="feedback-main-wrap">
             @yield('content')
         </main>
-
-        <footer class="border-t border-neutral-800">
-            <div class="mx-auto max-w-5xl px-6 py-6 text-center text-sm text-neutral-500">
-                &copy; {{ date('Y') }} Cagayan Museum, National Museum of the Philippines
-            </div>
-        </footer>
     </div>
 
     @stack('scripts')
