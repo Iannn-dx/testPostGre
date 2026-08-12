@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -131,5 +132,148 @@ class Feedback extends Model
             self::EXPERIENCE_POOR,
             self::EXPERIENCE_BAD,
         ];
+    }
+
+    /**
+     * Numeric scores used for dashboard averages.
+     *
+     * @return array<string, int>
+     */
+    public static function experienceScores(): array
+    {
+        return [
+            self::EXPERIENCE_EXCELLENT => 5,
+            self::EXPERIENCE_GOOD => 4,
+            self::EXPERIENCE_AVERAGE => 3,
+            self::EXPERIENCE_POOR => 2,
+            self::EXPERIENCE_BAD => 1,
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function ageRangeLabels(): array
+    {
+        return [
+            self::AGE_RANGE_1_12 => '1–12',
+            self::AGE_RANGE_13_17 => '13–17',
+            self::AGE_RANGE_18_49 => '18–49',
+            self::AGE_RANGE_50_PLUS => '50+',
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function genderLabels(): array
+    {
+        return [
+            self::GENDER_MALE => 'Male',
+            self::GENDER_FEMALE => 'Female',
+            self::GENDER_PREFER_NOT_TO_SAY => 'Prefer not to say',
+            self::GENDER_OTHER => 'Other',
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function residenceLabels(): array
+    {
+        return [
+            self::RESIDENCE_TUGUEGARAO_CITY => 'Tuguegarao City',
+            self::RESIDENCE_CAGAYAN => 'Cagayan Province',
+            self::RESIDENCE_PHILIPPINES => 'Other PH areas',
+            self::RESIDENCE_INTERNATIONAL => 'International',
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function experienceLabels(): array
+    {
+        return [
+            self::EXPERIENCE_EXCELLENT => 'Excellent',
+            self::EXPERIENCE_GOOD => 'Good',
+            self::EXPERIENCE_AVERAGE => 'Average',
+            self::EXPERIENCE_POOR => 'Poor',
+            self::EXPERIENCE_BAD => 'Bad',
+        ];
+    }
+
+    public function visitorName(): string
+    {
+        return filled($this->name) ? $this->name : 'Anonymous';
+    }
+
+    public function ageRangeLabel(): ?string
+    {
+        return $this->age_range !== null
+            ? (self::ageRangeLabels()[$this->age_range] ?? $this->age_range)
+            : null;
+    }
+
+    public function genderLabel(): ?string
+    {
+        if ($this->gender === null) {
+            return null;
+        }
+
+        $label = self::genderLabels()[$this->gender] ?? $this->gender;
+
+        if ($this->gender === self::GENDER_OTHER && filled($this->gender_other)) {
+            return "{$label} ({$this->gender_other})";
+        }
+
+        return $label;
+    }
+
+    public function residenceLabel(): ?string
+    {
+        if ($this->residence_type === null) {
+            return null;
+        }
+
+        $label = self::residenceLabels()[$this->residence_type] ?? $this->residence_type;
+
+        if (filled($this->residence_detail)) {
+            return "{$label} — {$this->residence_detail}";
+        }
+
+        return $label;
+    }
+
+    public function experienceLabel(): ?string
+    {
+        return $this->overall_experience !== null
+            ? (self::experienceLabels()[$this->overall_experience] ?? $this->overall_experience)
+            : null;
+    }
+
+    public function experienceScore(): ?int
+    {
+        return $this->overall_experience !== null
+            ? (self::experienceScores()[$this->overall_experience] ?? null)
+            : null;
+    }
+
+    /**
+     * Average experience score on a 1–5 scale for the given query.
+     */
+    public static function averageExperienceScore(?Builder $query = null): ?float
+    {
+        $query = ($query ?? static::query())->whereNotNull('overall_experience');
+
+        $case = collect(static::experienceScores())
+            ->map(fn (int $score, string $experience): string => "WHEN '{$experience}' THEN {$score}")
+            ->implode(' ');
+
+        $average = $query
+            ->selectRaw("AVG(CASE overall_experience {$case} END) as average_score")
+            ->value('average_score');
+
+        return $average !== null ? round((float) $average, 1) : null;
     }
 }

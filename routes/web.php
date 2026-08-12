@@ -30,6 +30,7 @@ Route::middleware('guest')->group(function (): void {
 
 Route::middleware('auth')->group(function (): void {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboard/feedback', [DashboardController::class, 'feedback'])->name('dashboard.feedback');
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::patch('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');

@@ -42,14 +42,13 @@
                 </button>
 
                 <x-sidebar :active-nav="$activeNav ?? 'dashboard'"
-                    :profile="$profile ?? (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardSampleData::profile())" />
+                    :profile="$profile ?? (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardData::profile())" />
             </div>
         </div>
 
-        {{-- Main content --}}
         <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
             <x-header :title="$headerTitle ?? 'Dashboard'" :subtitle="$headerSubtitle ?? ''"
-                :profile="$profile ?? (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardSampleData::profile())" />
+                :profile="$profile ?? (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardData::profile())" />
 
             <main class="flex-1 overflow-y-auto">
                 <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

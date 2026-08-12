@@ -15,7 +15,7 @@
             @endif
         </div>
         <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cm-teal/10 text-cm-teal">
-            <x-lucide-icon :name="$icon" class="h-5 w-5" />
+            <x-lucide-icon :name="$icon" class="h-5 w-5"></x-lucide-icon>
         </div>
     </div>
 </div>

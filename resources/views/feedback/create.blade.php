@@ -144,7 +144,6 @@
                     </div>
                 </section>
 
-                {{-- Right: Rating + Comments --}}
                 <div class="feedback-kiosk__right">
                     <section class="feedback-panel" aria-labelledby="section-experience">
                         <h3 id="section-experience" class="feedback-panel__title">Rate Your Experience</h3>

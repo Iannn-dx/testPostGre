@@ -11,7 +11,7 @@
     <div class="border-b border-white/10 px-5 py-5">
         <div class="flex items-center gap-3">
             <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cm-teal/20 text-cm-teal">
-                <img src="{{ asset('assets/images/OIP.png') }}" alt="Cagayan Museum logo" class="h-10 w-10">
+                <img src="{{ asset('assets/images/OIP.png') }}" alt="Cagayan Museum logo" class="h-10 w-10 rounded-4xl">
             </div>
             <div class="min-w-0">
                 <p class="truncate text-sm font-semibold tracking-wide">CAGAYAN MUSEUM</p>
@@ -20,14 +20,13 @@
         </div>
     </div>
 
-    {{-- Main navigation --}}
     <nav class="flex-1 space-y-1 overflow-y-auto px-3 py-4" aria-label="Main navigation">
         <x-sidebar-link :href="route('dashboard')" :active="$activeNav === 'dashboard'">
             <x-lucide-icon name="layout-dashboard" class="h-4 w-4 shrink-0" />
             Dashboard
         </x-sidebar-link>
 
-        <x-sidebar-link href="#" :active="$activeNav === 'feedback'">
+        <x-sidebar-link :href="route('dashboard.feedback')" :active="$activeNav === 'feedback'">
             <x-lucide-icon name="message-square" class="h-4 w-4 shrink-0" />
             Feedback
         </x-sidebar-link>
