@@ -17,8 +17,11 @@ class DashboardController extends Controller
         $profile = auth()->user()->toProfileArray();
 
         return view('dashboard.index', [
-            'stats' => DashboardData::stats(),
+            'summaryStats' => DashboardData::summaryStats(),
+            'visitorsByMonth' => DashboardData::visitorsByMonth(),
             'feedbackByMonth' => DashboardData::feedbackByMonth(),
+            'ratingDistribution' => DashboardData::ratingDistribution(),
+            'recentFeedback' => DashboardData::recentFeedback(),
             'profile' => $profile,
         ]);
     }

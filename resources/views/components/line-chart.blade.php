@@ -1,6 +1,10 @@
 @props([
     'title',
     'data' => [],
+    'chartId',
+    'type' => 'line',
+    'datasetLabel' => 'Count',
+    'tooltipSuffix' => '',
 ])
 
 @php
@@ -13,9 +17,13 @@
 
     <div class="relative h-64">
         <canvas
-            id="feedback-chart"
+            id="{{ $chartId }}"
+            class="dashboard-chart"
+            data-chart-type="{{ $type }}"
             data-labels='@json($labels)'
             data-values='@json($values)'
+            data-dataset-label="{{ $datasetLabel }}"
+            data-tooltip-suffix="{{ $tooltipSuffix }}"
             aria-label="{{ $title }}"
             role="img"
         ></canvas>
