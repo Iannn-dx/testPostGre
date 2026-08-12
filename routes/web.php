@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FeedbackController::class, 'create'])->name('home');
@@ -31,6 +32,8 @@ Route::middleware('guest')->group(function (): void {
 Route::middleware('auth')->group(function (): void {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('dashboard/feedback', [DashboardController::class, 'feedback'])->name('dashboard.feedback');
+    Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
+    Route::get('reports/pdf', [ReportController::class, 'pdf'])->name('reports.pdf');
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::patch('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');

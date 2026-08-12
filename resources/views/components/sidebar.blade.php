@@ -36,7 +36,7 @@
             Visitor Insights
         </x-sidebar-link>
 
-        <x-sidebar-link href="#" :active="$activeNav === 'reports'">
+        <x-sidebar-link :href="route('reports.index')" :active="$activeNav === 'reports'">
             <x-lucide-icon name="file-bar-chart" class="h-4 w-4 shrink-0" />
             Reports
         </x-sidebar-link>
