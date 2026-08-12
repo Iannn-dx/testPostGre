@@ -1,6 +1,6 @@
 @extends('layouts.auth-split')
 
-@section('title', 'Staff Login — Cagayan Museum')
+@section('title', 'Login — Cagayan Museum')
 
 @section('content')
     <x-auth-split-header title="Welcome Back" description="Sign in to manage visitor feedback and museum operations." />

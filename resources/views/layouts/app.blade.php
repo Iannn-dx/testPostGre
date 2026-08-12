@@ -9,12 +9,16 @@
     <title>{{ config('app.name', 'Visitor Feedback System') }}</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">F
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased bg-white text-black" x-data="{ sidebarOpen: false }" @keydown.escape.window="sidebarOpen = false">
+<body class="font-sans antialiased bg-white text-black" x-data="{ sidebarOpen: false }"
+    @keydown.escape.window="sidebarOpen = false">
     <div x-show="sidebarOpen" x-transition:enter="transition-opacity ease-linear duration-200"
         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
         x-transition:leave="transition-opacity ease-linear duration-200" x-transition:leave-start="opacity-100"
@@ -36,7 +40,7 @@
         </div>
 
         <main class="flex-1 bg-gray-50 p-4 lg:p-8">
-          @yield('content')
+            @yield('content')
         </main>
     </div>
 </body>

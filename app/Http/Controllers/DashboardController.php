@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\DashboardSampleData;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -11,6 +12,11 @@ class DashboardController extends Controller
      */
     public function index(): View
     {
-        return view('dashboard.index');
+        $profile = auth()->user()->toProfileArray();
+
+        return view('dashboard.index', [
+            'feedbackByMonth' => DashboardSampleData::feedbackByMonth(),
+            'profile' => $profile,
+        ]);
     }
 }

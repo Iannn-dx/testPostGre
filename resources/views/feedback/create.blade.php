@@ -67,7 +67,6 @@
             @csrf
 
             <div class="feedback-kiosk__body">
-                {{-- Left: About You --}}
                 <section class="feedback-panel" aria-labelledby="section-about">
                     <h3 id="section-about" class="feedback-panel__title">About You</h3>
 

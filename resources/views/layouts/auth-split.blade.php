@@ -28,16 +28,7 @@
             <div class="auth-split__visual-bg"></div>
             <div class="auth-split__visual-content">
                 <div class="auth-split__visual-logo">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="4" y="18" width="40" height="24" rx="1" stroke="currentColor"
-                            stroke-width="1.5" />
-                        <path d="M4 24h40" stroke="currentColor" stroke-width="1.5" />
-                        <path d="M14 18V10h6v8M28 18V10h6v8" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" />
-                        <path d="M10 42v-4M38 42v-4" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" />
-                        <circle cx="24" cy="31" r="4" stroke="currentColor" stroke-width="1.5" />
-                    </svg>
+                    <img src="{{ asset('assets/images/OIP.png') }}" alt="Cagayan Museum logo" class="feedback-logo__image">
                 </div>
                 <p class="auth-split__visual-eyebrow">National Museum of the Philippines</p>
                 <h2 class="auth-split__visual-title">Cagayan Museum &amp; Historical Research Center</h2>

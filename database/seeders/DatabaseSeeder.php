@@ -17,8 +17,25 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create([
-            'name' => 'Museum Administrator',
-            'email' => 'admin@cagayanmuseum.test',
+            'first_name' => 'Admin',
+            'last_name' => 'User',
+            'name' => 'Admin User',
+            'email' => 'admin@museum.local',
+            'phone' => '09171234567',
+            'role' => User::ROLE_ADMIN,
+            'status' => User::STATUS_ACTIVE,
+            'password' => Hash::make('password'),
+            'last_login_at' => now(),
+        ]);
+
+        User::factory()->create([
+            'first_name' => 'Staff',
+            'last_name' => 'User',
+            'name' => 'Staff User',
+            'email' => 'staff@museum.local',
+            'phone' => '09181234567',
+            'role' => User::ROLE_STAFF,
+            'status' => User::STATUS_ACTIVE,
             'password' => Hash::make('password'),
         ]);
     }

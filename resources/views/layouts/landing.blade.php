@@ -26,17 +26,9 @@
         <header class="feedback-header">
             <div class="feedback-header__inner mx-auto flex items-center justify-between gap-4">
                 <a href="{{ route('home') }}" class="feedback-header__brand">
-                    <div class="feedback-logo" aria-hidden="true">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="18" width="40" height="24" rx="1" stroke="currentColor"
-                                stroke-width="1.5" />
-                            <path d="M4 24h40" stroke="currentColor" stroke-width="1.5" />
-                            <path d="M14 18V10h6v8M28 18V10h6v8" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" />
-                            <path d="M10 42v-4M38 42v-4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" />
-                            <circle cx="24" cy="31" r="4" stroke="currentColor" stroke-width="1.5" />
-                        </svg>
+                    <div class="feedback-logo">
+                        <img src="{{ asset('assets/images/OIP.png') }}" alt="Cagayan Museum logo"
+                            class="feedback-logo__image">
                     </div>
                     <div>
                         <p class="feedback-header__eyebrow">National Museum of the Philippines</p>
@@ -50,8 +42,8 @@
                         Dashboard
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="landing-btn-primary shrink-0">
-                        Staff Login
+                    <a href="{{ route('login') }}" class="landing-btn-staff shrink-0">
+                        Login
                     </a>
                 @endauth
             </div>
