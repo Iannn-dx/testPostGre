@@ -1,7 +1,9 @@
 @php
-    $logoSrc = isset($logoBase64) && $logoBase64
-        ? 'data:image/png;base64,'.$logoBase64
-        : asset('assets/images/OIP.png');
+    $logoSrc =
+        isset($logoBase64) && $logoBase64 ? 'data:image/png;base64,' . $logoBase64 : asset('assets/images/OIP.png');
+
+    $logoSrc =
+        isset($logoBase64) && $logoBase64 ? 'data:image/png;base64,' . $logoBase64 : asset('assets/images/OIP.png');
 
     $formatReportDate = function ($feedback): string {
         $date = $feedback->visit_date ?? $feedback->created_at;
@@ -15,7 +17,6 @@
 @endphp
 
 <article class="report-document {{ $documentClass ?? '' }}">
-    {{-- Header --}}
     <header class="report-document__header">
         <div class="report-document__logo">
             <img src="{{ $logoSrc }}" alt="Cagayan Museum logo" width="64" height="64">
@@ -52,7 +53,6 @@
         </dl>
     </section>
 
-    {{-- Visitor Information --}}
     <section class="report-document__section">
         <h2 class="report-document__section-title">Visitor Information</h2>
 
@@ -84,7 +84,6 @@
         @endif
     </section>
 
-    {{-- Feedback Details --}}
     <section class="report-document__section report-document__section--break">
         <h2 class="report-document__section-title">Feedback Details</h2>
 
@@ -106,14 +105,14 @@
                                 @endif
                             </span>
                         </div>
-                        <p class="report-document__feedback-text">{{ filled($feedback->comments) ? $feedback->comments : '—' }}</p>
+                        <p class="report-document__feedback-text">
+                            {{ filled($feedback->comments) ? $feedback->comments : '—' }}</p>
                     </li>
                 @endforeach
             </ol>
         @endif
     </section>
 
-    {{-- Footer --}}
     <footer class="report-document__footer">
         <p class="report-document__footer-line">Cagayan Museum</p>
         <p class="report-document__footer-line">Visitor Feedback System</p>

@@ -31,11 +31,6 @@
             Feedback
         </x-sidebar-link>
 
-        <x-sidebar-link href="#" :active="$activeNav === 'insights'">
-            <x-lucide-icon name="eye" class="h-4 w-4 shrink-0" />
-            Visitor Insights
-        </x-sidebar-link>
-
         <x-sidebar-link :href="route('reports.index')" :active="$activeNav === 'reports'">
             <x-lucide-icon name="file-bar-chart" class="h-4 w-4 shrink-0" />
             Reports
@@ -50,18 +45,13 @@
 
         <p class="px-3 pb-2 text-[10px] font-semibold uppercase tracking-wider text-neutral-500">Administration</p>
 
-        <x-sidebar-link href="#" :active="$activeNav === 'users'">
+        <x-sidebar-link :href="route('dashboard.users')" :active="$activeNav === 'users'">
             <x-lucide-icon name="users" class="h-4 w-4 shrink-0" />
             Users
         </x-sidebar-link>
 
-        <x-sidebar-link href="#" :active="$activeNav === 'settings'">
-            <x-lucide-icon name="settings" class="h-4 w-4 shrink-0" />
-            Settings
-        </x-sidebar-link>
     </nav>
 
-    {{-- User footer --}}
     <div class="border-t border-white/10 px-4 py-4">
         <div class="flex items-center gap-3">
             <div

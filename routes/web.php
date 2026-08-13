@@ -32,6 +32,7 @@ Route::middleware('guest')->group(function (): void {
 Route::middleware('auth')->group(function (): void {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('dashboard/feedback', [DashboardController::class, 'feedback'])->name('dashboard.feedback');
+    Route::get('dashboard/users', [DashboardController::class, 'users'])->name('dashboard.users');
     Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('reports/pdf', [ReportController::class, 'pdf'])->name('reports.pdf');
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');

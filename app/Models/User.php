@@ -15,7 +15,7 @@ class User extends Authenticatable
 
     public const ROLE_ADMIN = 'admin';
 
-    public const ROLE_STAFF = 'staff';
+    // public const ROLE_STAFF = 'staff';
 
     public const STATUS_ACTIVE = 'active';
 
@@ -96,22 +96,58 @@ class User extends Authenticatable
         return strtoupper(substr((string) $this->name, 0, 2)) ?: 'U';
     }
 
+    /**
+     * @return list<string>
+     */
+    public static function roles(): array
+    {
+        return [
+            self::ROLE_ADMIN,
+            // self::ROLE_STAFF,
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function roleLabels(): array
+    {
+        return [
+            self::ROLE_ADMIN => 'Administrator',
+            // self::ROLE_STAFF => 'Museum Staff',
+        ];
+    }
+
+    /**
+     * @return list<string>
+     */
+    public static function statuses(): array
+    {
+        return [
+            self::STATUS_ACTIVE,
+            self::STATUS_INACTIVE,
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function statusLabels(): array
+    {
+        return [
+            self::STATUS_ACTIVE => 'Active',
+            self::STATUS_INACTIVE => 'Inactive',
+        ];
+    }
+
     public function roleLabel(): string
     {
-        return match ($this->role) {
-            self::ROLE_ADMIN => 'Administrator',
-            self::ROLE_STAFF => 'Museum Staff',
-            default => 'Staff',
-        };
+        return self::roleLabels()[$this->role] ?? 'Staff';
     }
 
     public function statusLabel(): string
     {
-        return match ($this->status) {
-            self::STATUS_ACTIVE => 'Active',
-            self::STATUS_INACTIVE => 'Inactive',
-            default => ucfirst((string) $this->status),
-        };
+        return self::statusLabels()[$this->status] ?? ucfirst((string) $this->status);
     }
 
     public function isActive(): bool

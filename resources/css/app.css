@@ -1756,6 +1756,10 @@ html:has(.feedback-page) {
         grid-template-columns: minmax(0, 1fr) 11rem auto;
         align-items: end;
     }
+
+    .feedback-filters--extended {
+        grid-template-columns: minmax(0, 1fr) 10rem 10rem auto;
+    }
 }
 
 .feedback-filters__field {

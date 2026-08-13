@@ -12,7 +12,7 @@
         <section class="feedback-panel" aria-labelledby="feedback-filters-heading">
             <div class="feedback-panel__header">
                 <div>
-                    <h2 id="feedback-filters-heading" class="feedback-panel__title">Search &amp; Filter</h2>
+                    <h2 id="feedback-filters-heading" class="feedback-panel__title">Search</h2>
                     <p class="feedback-panel__subtitle">Find feedback by visitor name, comments, or rating.</p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="feedback-panel__header feedback-panel__header--row">
                 <div>
                     <h2 id="feedback-list-heading" class="feedback-panel__title">Visitor Feedback</h2>
-                    <p class="feedback-panel__subtitle">
+                    {{-- <p class="feedback-panel__subtitle">
                         @if ($feedbacks->total() === 0)
                             No entries found.
                         @elseif ($feedbacks->total() === 1)
@@ -64,7 +64,7 @@
                         @else
                             {{ number_format($feedbacks->total()) }} submissions
                         @endif
-                    </p>
+                    </p> --}}
                 </div>
 
                 @if ($feedbacks->total() > 0)

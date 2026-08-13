@@ -24,14 +24,12 @@
     @keydown.escape.window="sidebarOpen = false">
 
     <div class="flex h-screen overflow-hidden">
-        {{-- Mobile overlay --}}
         <div x-show="sidebarOpen" x-transition:enter="transition-opacity ease-out duration-200"
             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
             x-transition:leave="transition-opacity ease-in duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0" class="fixed inset-0 z-40 bg-neutral-900/50 lg:hidden"
             @click="sidebarOpen = false" x-cloak aria-hidden="true"></div>
 
-        {{-- Sidebar --}}
         <div class="fixed inset-y-0 left-0 z-50 -translate-x-full transition-transform duration-200 lg:static lg:translate-x-0 lg:transition-none"
             :class="{ 'translate-x-0': sidebarOpen }">
             <div class="relative h-full">
@@ -41,14 +39,14 @@
                     <x-lucide-icon name="x" class="h-5 w-5" />
                 </button>
 
-                <x-sidebar :active-nav="$activeNav ?? 'dashboard'"
-                    :profile="$profile ?? (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardData::profile())" />
+                <x-sidebar :active-nav="$activeNav ?? 'dashboard'" :profile="$profile ??
+                    (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardData::profile())" />
             </div>
         </div>
 
         <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
-            <x-header :title="$headerTitle ?? 'Dashboard'" :subtitle="$headerSubtitle ?? ''"
-                :profile="$profile ?? (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardData::profile())" />
+            <x-header :title="$headerTitle ?? 'Dashboard'" :subtitle="$headerSubtitle ?? ''" :profile="$profile ??
+                (auth()->check() ? auth()->user()->toProfileArray() : \App\Support\DashboardData::profile())" />
 
             <main class="flex-1 overflow-y-auto">
                 <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
