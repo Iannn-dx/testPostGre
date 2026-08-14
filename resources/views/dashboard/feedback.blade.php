@@ -19,7 +19,7 @@
 
             <form method="GET" action="{{ route('dashboard.feedback') }}" class="feedback-filters">
                 <div class="feedback-filters__field feedback-filters__field--grow">
-                    <label for="search" class="feedback-label">Search</label>
+                    {{-- <label for="search" class="feedback-label">Search</label> --}}
                     <div class="feedback-search">
                         <x-lucide-icon name="search" class="feedback-search__icon h-4 w-4" />
                         <input id="search" type="search" name="search" value="{{ $filters['search'] }}"

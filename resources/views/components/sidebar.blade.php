@@ -23,8 +23,10 @@
     <nav class="flex-1 space-y-1 overflow-y-auto px-3 py-4" aria-label="Main navigation">
         <x-sidebar-link :href="route('dashboard')" :active="$activeNav === 'dashboard'">
             <x-lucide-icon name="layout-dashboard" class="h-4 w-4 shrink-0" />
-            Dashboard
+            Dashboard   
         </x-sidebar-link>
+
+        {{-- #F7F4D8, #6B4F00, #F6D02F, #C77D00 --}}
 
         <x-sidebar-link :href="route('dashboard.feedback')" :active="$activeNav === 'feedback'">
             <x-lucide-icon name="message-square" class="h-4 w-4 shrink-0" />

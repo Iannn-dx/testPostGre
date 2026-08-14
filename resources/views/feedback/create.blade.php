@@ -136,13 +136,15 @@
                             </div>
                             <div class="feedback-field feedback-field--inline">
                                 <input type="text" id="residence_detail" name="residence_detail"
-                                    value="{{ old('residence_detail') }}" class="feedback-input"
+                                    value="{{ old('residence_detail') }}" class="feedback-input m-px-3"
                                     placeholder="City / municipality / country (optional)" maxlength="255"
                                     aria-label="Residence details">
                             </div>
                         </fieldset>
                     </div>
                 </section>
+
+                
 
                 <div class="feedback-kiosk__right">
                     <section class="feedback-panel" aria-labelledby="section-experience">
@@ -204,6 +206,8 @@
                             </div>
                         </fieldset>
                     </section>
+
+                    {{--  --}}
 
                     <section class="feedback-panel feedback-panel--grow" aria-labelledby="section-comments">
                         <h3 id="section-comments" class="feedback-panel__title">Comments &amp; Suggestions</h3>

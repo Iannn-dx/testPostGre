@@ -10,7 +10,7 @@
             <p class="auth-brand__name">Portal</p>
         </div>
     </a>
-</div>
+</div>      
 
 <div class="auth-heading">
     <h1 class="auth-heading__title">{{ $title }}</h1>

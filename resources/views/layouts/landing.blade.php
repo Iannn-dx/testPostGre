@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link
-        href="https://fonts.bunny.net/css?family=fraunces:400,500,600|source-sans-3:400,500,600&display=swap"
+        href="https://fonts.bunny.net/css?family=archivo-black|inter:400,500,600,700&display=swap"
         rel="stylesheet" />
 
     @vite(['resources/css/app.css', 'resources/js/feedback-form.js'])
@@ -26,9 +26,15 @@
         <header class="feedback-header">
             <div class="feedback-header__inner mx-auto flex items-center justify-between gap-4">
                 <a href="{{ route('home') }}" class="feedback-header__brand">
-                    <div class="feedback-logo">
-                        <img src="{{ asset('assets/images/OIP.png') }}" alt="Cagayan Museum logo"
-                            class="feedback-logo__image">
+                    <div class="feedback-logos flex gap-2">
+                        <div class="feedback-logo">
+                            <img src="{{ asset('assets/images/OIP.png') }}" alt="Cagayan Museum logo"
+                                class="feedback-logo__image">
+                        </div>
+                        <div class="feedback-logo">
+                            <img src="{{ asset('assets/images/Ph_seal_cagayan-removebg-preview.png') }}"
+                                alt="Province of Cagayan official seal" class="feedback-logo__image">
+                        </div>
                     </div>
                     <div>
                         <p class="feedback-header__eyebrow">National Museum of the Philippines</p>
