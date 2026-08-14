@@ -136,7 +136,7 @@
                             </div>
                             <div class="feedback-field feedback-field--inline">
                                 <input type="text" id="residence_detail" name="residence_detail"
-                                    value="{{ old('residence_detail') }}" class="feedback-input m-px-3"
+                                    value="{{ old('residence_detail') }}" class="feedback-input"
                                     placeholder="City / municipality / country (optional)" maxlength="255"
                                     aria-label="Residence details">
                             </div>
@@ -144,10 +144,7 @@
                     </div>
                 </section>
 
-                
-
-                <div class="feedback-kiosk__right">
-                    <section class="feedback-panel" aria-labelledby="section-experience">
+                <section class="feedback-panel" aria-labelledby="section-experience">
                         <h3 id="section-experience" class="feedback-panel__title">Rate Your Experience</h3>
 
                         <fieldset class="feedback-fieldset">
@@ -205,20 +202,17 @@
                                 @endforeach
                             </div>
                         </fieldset>
-                    </section>
+                </section>
 
-                    {{--  --}}
-
-                    <section class="feedback-panel feedback-panel--grow" aria-labelledby="section-comments">
-                        <h3 id="section-comments" class="feedback-panel__title">Comments &amp; Suggestions</h3>
-                        <div class="feedback-field feedback-field--grow">
-                            <label for="comments" class="sr-only">Comments and suggestions</label>
-                            <textarea id="comments" name="comments" class="feedback-textarea"
-                                placeholder="Share your thoughts about exhibits, staff, facilities, or accessibility…"
-                                maxlength="5000">{{ old('comments') }}</textarea>
-                        </div>
-                    </section>
-                </div>
+                <section class="feedback-panel" aria-labelledby="section-comments">
+                    <h3 id="section-comments" class="feedback-panel__title">Comments &amp; Suggestions</h3>
+                    <div class="feedback-field">
+                        <label for="comments" class="sr-only">Comments and suggestions</label>
+                        <textarea id="comments" name="comments" class="feedback-textarea"
+                            placeholder="Share your thoughts about exhibits, staff, facilities, or accessibility…"
+                            maxlength="5000">{{ old('comments') }}</textarea>
+                    </div>
+                </section>
             </div>
 
             <div class="feedback-kiosk__bar">
