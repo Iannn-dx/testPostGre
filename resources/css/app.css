@@ -374,7 +374,7 @@
 .feedback-header {
     flex-shrink: 0;
     border-bottom: 1px solid rgba(15, 118, 110, 0.12);
-    background: rgba(254, 252, 251, 0.88);
+    background: #F7F4D8;
     backdrop-filter: blur(12px);
 }
 
@@ -439,6 +439,7 @@
 
 .feedback-main-wrap {
     flex: 1;
+    background: #F3F4F6;
 }
 
 .feedback-kiosk {

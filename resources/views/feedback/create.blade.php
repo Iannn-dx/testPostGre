@@ -134,6 +134,7 @@
                                     </label>
                                 @endforeach
                             </div>
+                            {{-- create residence --}}
                             <div class="feedback-field feedback-field--inline">
                                 <input type="text" id="residence_detail" name="residence_detail"
                                     value="{{ old('residence_detail') }}" class="feedback-input"
@@ -205,7 +206,7 @@
                 </section>
 
                 <section class="feedback-panel" aria-labelledby="section-comments">
-                    <h3 id="section-comments" class="feedback-panel__title">Comments &amp; Suggestions</h3>
+                    <h3 id="section-comments" class="feedback-panel__title">Comments and Suggestions</h3>
                     <div class="feedback-field">
                         <label for="comments" class="sr-only">Comments and suggestions</label>
                         <textarea id="comments" name="comments" class="feedback-textarea"

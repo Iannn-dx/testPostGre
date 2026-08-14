@@ -26,7 +26,7 @@
         x-cloak>
     </div>
 
-    @include('layouts.sidebar')
+    {{-- @include('layouts.sidebar') --}}
 
     <div class="flex min-h-screen flex-col lg:pl-64">
         <div class="sticky top-0 z-30 flex items-center px-4 pt-4 lg:hidden">
